@@ -270,7 +270,7 @@ footer {
     font-weight: bold;
     transition: background-color 0.3s, box-shadow 0.3s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ссылка растягивается на всю ширину */
+    width: 98%; /* Ссылка растягивается на всю ширину */
     overflow: hidden; /* Не позволяем содержимому вылезать за пределы */
 }
 
