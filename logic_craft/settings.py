@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-&7b1f&m_2h$aqh-s&o0m%2)@4_^*4svo9l&xo^!yxa9*ee&ks7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOST = ['*']
+ALLOWED_HOSTS = ['web-production-b038.up.railway.app']
 
 # Application definition
 
@@ -46,6 +46,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'logic_craft.urls'
