@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogicCraft - Encyclopedia of Algorithms</title>
+    <link rel="stylesheet" href="{% static 'library/css/index.css' %}">
+    <link rel="icon" href="{% static 'library/img/icon.png' %}">
+</head>
+<body>
+<header>
+    <h1>LogicCraft</h1>
+    <p>Your comprehensive encyclopedia of programming algorithms</p>
+</header>
+<nav>
+    <a href="{% url 'library:home' %}">Home</a>
+    <a href="{% url 'library:categories' %}">Categories</a>
+    <form method="get" action="{% url 'library:home' %}" class="search-form">
+        <input type="text" name="search" placeholder="Search algorithms..." class="search-input" required>
+        <button type="submit" class="search-button">Search</button>
+    </form>
+</nav>
+<main>
+    {% block content %}
+    <h2>Welcome to LogicCraft!</h2>
+    <p>Explore a wide variety of programming algorithms, from sorting to advanced graph theory.</p>
+    <p>Use the navigation bar to find specific algorithms or browse categories.</p>
+    {% endblock %}
+</main>
+<footer>
+    <p>&copy; 2025 LogicCraft. All rights reserved.</p>
+</footer>
+</body>
+</html>

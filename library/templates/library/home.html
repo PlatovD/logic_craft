@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="algorithm-grid">
+        {% for algorithm in algorithms %}
+        <div class="algorithm-card">
+            <h3>{{ algorithm.name }}</h3>
+            <p>{{ algorithm.description|truncatewords:20 }}</p>
+            <div class="algorithm-meta">
+                <p><strong>Time Complexity:</strong> {{ algorithm.complexity_time }}</p>
+                <p><strong>Space Complexity:</strong> {{ algorithm.complexity_space }}</p>
+            </div>
+            <a href="{% url 'library:alg' algorithm.id %}" class="view-more">View Details</a>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

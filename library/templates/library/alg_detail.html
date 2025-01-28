@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="algorithm-detail">
+    <h2>{{ algorithm.name }}</h2>
+    {% if algorithm.categories.all %}
+    <h3>Categories</h3>
+    <div class="categories">
+        {% for category in algorithm.categories.all %}
+        <div class="category-item"><a href="{% url 'library:home' %}?category={{ category.pk }}">{{ category.name }}</a></div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if algorithm.description %}
+    <p><strong>Description:</strong> {{ algorithm.description }}</p>
+    {% endif %}
+    {% if algorithm.complexity_time %}
+    <p><strong>Time Complexity:</strong> {{ algorithm.complexity_time }}</p>
+    {% endif %}
+    {% if algorithm.complexity_space %}
+    <p><strong>Space Complexity:</strong> {{ algorithm.complexity_space }}</p>
+    {% endif %}
+
+    {% if algorithm.input_example %}
+    <h3>Input Example</h3>
+    <pre>{{ algorithm.input_example }}</pre>
+    {% endif %}
+
+    {% if algorithm.output_example %}
+    <h3>Output Example</h3>
+    <pre>{{ algorithm.output_example }}</pre>
+    {% endif %}
+
+    {% if algorithm.pseudocode %}
+    <h3>Pseudocode</h3>
+    <pre>{{ algorithm.pseudocode }}</pre>
+    {% endif %}
+
+    {% if algorithm.implementation %}
+    <h3>Implementation</h3>
+    <pre>{{ algorithm.implementation }}</pre>
+    {% endif %}
+</div>
+{% endblock %}

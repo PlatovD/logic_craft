@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+<h2>Categories</h2>
+<ul class="category-list">
+    {% for category in categories %}
+    <li>
+        <a href="{% url 'library:home' %}?category={{ category.pk }}">{{ category.name }}
+            <span class="algorithm-count">{{ category.algorithm_count }} algorithms</span>
+        </a>
+
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
