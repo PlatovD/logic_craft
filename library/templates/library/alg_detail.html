@@ -1,5 +1,5 @@
 {% extends 'index.html' %}
-
+{% load static %}
 {% block content %}
 <div class="algorithm-detail">
     <h2>{{ algorithm.name }}</h2>
@@ -7,7 +7,8 @@
     <h3>Categories</h3>
     <div class="categories">
         {% for category in algorithm.categories.all %}
-        <div class="category-item"><a href="{% url 'library:home' %}?category={{ category.pk }}">{{ category.name }}</a></div>
+        <div class="category-item"><a href="{% url 'library:home' %}?category={{ category.pk }}">{{ category.name }}</a>
+        </div>
         {% endfor %}
     </div>
     {% endif %}
@@ -42,4 +43,7 @@
     <pre>{{ algorithm.implementation }}</pre>
     {% endif %}
 </div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'library/js/enablePreFullscreen.js' %}"></script>
 {% endblock %}
